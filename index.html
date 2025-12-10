@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Student Queries</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div>
+      <h1>College Student Queries</h1>
+      <p>Post problems, get solutions, and contact help desk. All stored in your browser.</p>
+    </div>
+
+    <div class="auth-header">
+      <!-- When not logged in -->
+      <div id="auth-area">
+        <button id="show-login" class="btn small">Login</button>
+        <button id="show-signup" class="btn small primary">Sign Up</button>
+      </div>
+
+      <!-- When logged in -->
+      <div id="user-info" class="hidden">
+        <span id="user-name-label" class="user-label"></span>
+        <button id="logout-btn" class="btn small">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth card (login + signup) -->
+  <section id="auth-card" class="auth-card">
+    <div class="auth-tabs">
+      <button id="tab-login" class="auth-tab active">Login</button>
+      <button id="tab-signup" class="auth-tab">Sign Up</button>
+    </div>
+
+    <!-- Login form -->
+    <form id="login-form" class="auth-form">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" placeholder="your@email.com" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" placeholder="••••••••" required />
+
+      <button type="submit" class="btn primary">Login</button>
+    </form>
+
+    <!-- Signup form -->
+    <form id="signup-form" class="auth-form hidden">
+      <label for="signup-name">Full Name</label>
+      <input type="text" id="signup-name" placeholder="Your Name" required />
+
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email" placeholder="you@example.com" required />
+
+      <label for="signup-password">Password</label>
+      <input type="password" id="signup-password" placeholder="Create a password" required />
+
+      <button type="submit" class="btn primary">Create Account</button>
+    </form>
+  </section>
+
+  <!-- Main layout -->
+  <main class="layout">
+    <!-- Left side: Ask question + list -->
+    <section class="left">
+      <div class="card">
+        <h2>Ask a Question</h2>
+        <p class="meta small">You must be logged in to post a question.</p>
+        <form id="question-form">
+          <label for="q-title">Title</label>
+          <input
+            type="text"
+            id="q-title"
+            placeholder="e.g. How to center a div using CSS?"
+            required
+          />
+
+          <label for="q-body">Describe your problem</label>
+          <textarea
+            id="q-body"
+            rows="4"
+            placeholder="Explain your problem in detail..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn primary">Post Question</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>All Questions</h2>
+          <small>(Click any question to view / answer)</small>
+        </div>
+        <ul id="question-list" class="question-list">
+          <!-- Questions rendered by JS -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Right side: Question detail + answers + help desk -->
+    <section class="right">
+      <!-- When no question selected -->
+      <div id="detail-empty" class="card empty">
+        <p>No question selected yet. Click a question on the left to view it.</p>
+      </div>
+
+      <!-- Question details -->
+      <div id="detail-panel" class="card hidden">
+        <div class="detail-header">
+          <div>
+            <h2 id="detail-title"></h2>
+            <p id="detail-meta" class="meta"></p>
+          </div>
+          <span id="detail-status" class="status-badge"></span>
+        </div>
+
+        <p id="detail-body" class="detail-body"></p>
+
+        <button id="solve-btn" class="btn small">
+          Mark as Solved / Unsolved
+        </button>
+
+        <hr />
+
+        <h3>Solutions</h3>
+        <ul id="answers-list" class="answers-list">
+          <!-- Answers rendered by JS -->
+        </ul>
+
+        <form id="answer-form" class="answer-form">
+          <label for="answer-text">Add a solution</label>
+          <p class="meta small">You must be logged in to answer a question.</p>
+          <textarea
+            id="answer-text"
+            rows="3"
+            placeholder="Write your solution..."
+            required
+          ></textarea>
+          <button type="submit" class="btn primary small">Post Solution</button>
+        </form>
+      </div>
+
+      <!-- Help desk -->
+      <div id="help-card" class="card">
+        <h2>Help Desk</h2>
+        <p class="meta">
+          Facing issues with the website or need general academic help? Submit a ticket
+          below. (Saved only in your browser.)
+        </p>
+
+        <form id="help-form" class="help-form">
+          <label for="help-subject">Subject</label>
+          <input type="text" id="help-subject" placeholder="e.g. Website issue, exam doubt..." required />
+
+          <label for="help-message">Message</label>
+          <textarea
+            id="help-message"
+            rows="3"
+            placeholder="Explain your issue or question..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn primary small">Submit Ticket</button>
+        </form>
+
+        <h3 class="help-title">Previous Tickets (local)</h3>
+        <ul id="help-list" class="answers-list">
+          <!-- Tickets rendered by JS -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>
+      This is a final year project. Mohammad Huzaifa And Kaif Hashmi. (Group: Hashshak). 
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

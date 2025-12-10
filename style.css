@@ -1,0 +1,338 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Top bar */
+.topbar {
+  padding: 16px 24px;
+  border-bottom: 1px solid #1f2937;
+  background: #020617;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar h1 {
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+}
+
+.topbar p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Auth header */
+.auth-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+/* Auth card */
+.auth-card {
+  margin: 14px 16px 0;
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  padding: 12px 16px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.auth-tab {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #9ca3af;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.auth-tab.active {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #e5e7eb;
+}
+
+.auth-form {
+  margin-top: 4px;
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Cards */
+.card {
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-header small {
+  color: #6b7280;
+}
+
+/* Forms */
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid #6366f1;
+  border-color: #4f46e5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #e5e7eb;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.btn.small {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Question list */
+.question-list {
+  list-style: none;
+  margin-top: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.question-item {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border 0.15s;
+}
+
+.question-item:hover {
+  background: #020617;
+  border-color: #1f2937;
+}
+
+.question-item.active {
+  border-color: #4f46e5;
+  background: #020617;
+}
+
+.question-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.question-meta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  margin-left: 6px;
+  border: 1px solid #374151;
+  color: #9ca3af;
+}
+
+.badge.solved {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #a7f3d0;
+}
+
+/* Detail panel */
+.hidden {
+  display: none;
+}
+
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.detail-body {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  white-space: pre-wrap;
+}
+
+.meta {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.small {
+  font-size: 0.78rem;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid #374151;
+  color: #9ca3af;
+}
+
+.status-badge.solved {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #a7f3d0;
+}
+
+/* Answers & Help Desk lists */
+.answers-list {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.answer-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  margin-bottom: 6px;
+}
+
+.answer-text {
+  font-size: 0.9rem;
+}
+
+.answer-meta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.answer-form,
+.help-form {
+  margin-top: 8px;
+}
+
+.help-title {
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 8px 16px 16px;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    margin: 10px 10px 0;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
